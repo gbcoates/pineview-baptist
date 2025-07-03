@@ -1,3 +1,16 @@
+/* Hero section background image */
+.hero {
+  position: relative;
+  height: 60vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../church.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+}
 
 body {
   font-family: 'Georgia', serif;
@@ -7,17 +20,7 @@ body {
   padding: 0;
 }
 
-.hero {
-  position: relative;
-  height: 60vh;
-  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('../images/church-banner.jpg') center/cover no-repeat;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
-}
+/* Removed duplicate .hero rule */
 
 .nav {
   background-color: #003f4e;
