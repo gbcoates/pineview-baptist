@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="css/style.css"/>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      // Smooth scroll for nav links
       document.querySelectorAll("nav a").forEach(link => {
         link.addEventListener("click", e => {
           e.preventDefault();
@@ -16,6 +17,15 @@
           }
         });
       });
+      // Show livestream on button click
+      const showBtn = document.getElementById('show-livestream');
+      const livestream = document.getElementById('livestream-container');
+      if (showBtn && livestream) {
+        showBtn.addEventListener('click', () => {
+          livestream.style.display = 'block';
+          showBtn.style.display = 'none';
+        });
+      }
     });
   </script>
 </head>
@@ -26,7 +36,6 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#services">Services</a></li>
-        <li><a href="#sermons">Sermons</a></li>
         <li><a href="#livestream">Livestream</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#give">Give</a></li>
@@ -51,15 +60,13 @@
       <p>Sunday Worship: 10am<br>Wednesday Bible Study: 7pm<br>Location: 224 Youngs Bend Road, Kershaw, South Carolina</p>
     </section>
 
-    <section id="sermons">
-      <h2>Sermons</h2>
-      <p>Check back soon for sermon recordings.</p>
-    </section>
+    
 
     <section id="livestream">
       <h2>Livestream</h2>
-      <p>Watch our services live below:</p>
-      <div class="livestream">
+      <p>Watch our services live below. Sundays @ 10am and Wednesdays at 7pm</p>
+      <button id="show-livestream" class="btn">Show Livestream</button>
+      <div class="livestream" id="livestream-container" style="display:none; margin-top: 1rem;">
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fpineview.baptist.1%2Fvideos%2F2173123779779566%2F&width=1280" width="100%" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
     </section>
