@@ -18,10 +18,39 @@
           }
         });
       });
+
+      // Scheduled Watch Live button logic
+      function isLivestreamTime() {
+        const now = new Date();
+        const day = now.getDay(); // 0=Sunday, 3=Wednesday
+        const hour = now.getHours();
+        const min = now.getMinutes();
+        // Sunday 10:00–11:30am
+        if (day === 0 && ((hour === 10) || (hour === 11 && min < 30))) return true;
+        // Wednesday 7:00–8:30pm
+        if (day === 3 && ((hour === 19) || (hour === 20 && min < 30))) return true;
+        return false;
+      }
+
+      // Hide/show Watch Live button in hero
+      const heroBtn = document.querySelector('.hero-content .btn[href="#livestream"]');
+      if (heroBtn) {
+        if (!isLivestreamTime()) {
+          heroBtn.style.display = 'none';
+        } else {
+          heroBtn.style.display = '';
+        }
+      }
+
       // Show livestream on button click
       const showBtn = document.getElementById('show-livestream');
       const livestream = document.getElementById('livestream-container');
       if (showBtn && livestream) {
+        if (!isLivestreamTime()) {
+          showBtn.style.display = 'none';
+        } else {
+          showBtn.style.display = '';
+        }
         showBtn.addEventListener('click', () => {
           livestream.style.display = 'block';
           showBtn.style.display = 'none';
@@ -76,7 +105,7 @@
 
     <section id="livestream">
       <h2>Livestream</h2>
-      <p>Watch our services live below. Sundays @ 10am and Wednesdays @ 7pm</p>
+      <p>Watch our services live here. Sundays @ 10am and Wednesdays @ 7pm</p>
       <button id="show-livestream" class="btn">Show Livestream</button>
       <div class="livestream" id="livestream-container" style="display:none; margin-top: 1rem;">
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fpineview.baptist.1%2Fvideos%2F2173123779779566%2F&width=1280" width="100%" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
