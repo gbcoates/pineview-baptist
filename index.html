@@ -132,12 +132,14 @@
 
     <section id="events">
       <h2>Events</h2>
-      <p>Upcoming events will be listed here.</p>
+      <ul id="events-list">
+        <li>Loading events...</li>
+      </ul>
     </section>
 
     <section id="give">
       <h2>Give</h2>
-      <p>Support our ministry: [Donation Link Here]</p>
+      <p>Text: 52014 @bfsc.give $(amount) #pvbc</p>
     </section>
 
     <section id="contact">
@@ -157,5 +159,31 @@
       </a>
     </div>
   </footer>
+
+  <script>
+document.addEventListener("DOMContentLoaded", function() {
+  const eventsList = document.getElementById('events-list');
+  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSvyqF8C06AyNWEOvny4fXHtktXfjWCQ9BFR4vjCGwTWtSPfq0uzU3CdzDD-yJ2Cz02XW_GJsucd-4U/pub?gid=0&single=true&output=csv')
+    .then(response => response.text())
+    .then(csv => {
+      const rows = csv.trim().split('\n').map(row => row.split(','));
+      eventsList.innerHTML = '';
+      for (let i = 1; i < rows.length; i++) {
+        const [date, event, time] = rows[i];
+        if (date && event && time) {
+          const li = document.createElement('li');
+          li.innerHTML = `<strong>${date}</strong>: ${event} — <em>${time}</em>`;
+          eventsList.appendChild(li);
+        }
+      }
+      if (eventsList.children.length === 0) {
+        eventsList.innerHTML = '<li>No upcoming events.</li>';
+      }
+    })
+    .catch(() => {
+      eventsList.innerHTML = '<li>Could not load events.</li>';
+    });
+});
+</script>
 </body>
 </html>
