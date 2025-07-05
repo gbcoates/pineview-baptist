@@ -107,6 +107,21 @@ body {
   transform: translateY(-2px) scale(1.03);
 }
 
+.btn-outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #2196f3;
+  padding: 0.7em 1.5em;
+  border-radius: 2em;
+  font-weight: 600;
+  transition: background 0.2s, color 0.2s;
+}
+
+.btn-outline:hover {
+  background: #2196f3;
+  color: #fff;
+}
+
 main {
   padding: 40px 20px;
   max-width: 900px;
@@ -145,35 +160,131 @@ footer {
   letter-spacing: 0.2px;
 }
 
-.livestream iframe {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 9;
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(34,43,58,0.10);
+/* --- Modernized Hero Section --- */
+.hero-content.modern-left {
+  max-width: 600px;
+  margin-left: 4vw;
+  margin-right: auto;
+  text-align: left;
+  background: rgba(34, 43, 58, 0.65);
+  border-radius: 1.5em;
+  padding: 2.5em 2.5em 2em 2.5em;
+  box-shadow: 0 4px 32px rgba(34,43,58,0.10);
+  position: relative;
+  top: 2vw;
+}
+.hero-content.modern-left h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.5em;
+  letter-spacing: 0.01em;
+}
+.hero-content.modern-left p {
+  font-size: 1.45rem;
+  color: #e3e3e3;
+  margin-bottom: 1.5em;
+}
+.hero-content.modern-left .btn {
+  margin-right: 1em;
+  margin-bottom: 0.5em;
 }
 
-iframe[allowfullscreen] {
-  border-radius: 12px;
-  box-shadow: 0 2px 12px rgba(34,43,58,0.10);
+.site-footer {
+  background: #23272b;
+  color: #fff;
+  padding: 2.5em 0 0.5em 0;
+  font-family: inherit;
+  font-size: 1.05em;
 }
-
-#events-list li {
-  margin-bottom: 1em;
+.site-footer hr {
+  margin: 0 0 2em 0;
+  border: none;
+  border-top: 3px solid #2196f3;
 }
-
-section#about img {
+.footer-main {
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+  max-width: 1100px;
+  margin: 0 auto 2em auto;
+  flex-wrap: wrap;
+}
+.footer-col {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+.footer-col h3 {
+  font-size: 1.25em;
+  margin-bottom: 0.5em;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.footer-col p, .footer-col a {
+  color: #fff;
+  margin: 0.2em 0;
+  text-decoration: none;
+  font-weight: 400;
+}
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto 1em auto;
+  padding-top: 1em;
+  border-top: 1px solid #333a;
+}
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5em;
+}
+.footer-nav a {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: color 0.2s;
+}
+.footer-nav a:hover {
+  color: #2196f3;
+}
+.footer-social {
+  display: flex;
+  gap: 1em;
+}
+.footer-social a {
+  display: inline-block;
+  transition: transform 0.2s;
+}
+.footer-social a:hover {
+  transform: scale(1.12);
+}
+.footer-social svg {
   display: block;
-  margin: 0.5em auto 2em auto;
-  max-width: 180px;
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 2px 12px rgba(34,43,58,0.12);
+}
+.footer-copyright {
+  text-align: center;
+  color: #bbb;
+  font-size: 0.98em;
+  margin-top: 1.5em;
 }
 
-section#about p {
-  margin-top: 2em;
+/* Pastor image: larger, oval shape */
+#about img[alt*="Pastor"] {
+  max-width: 260px;
+  width: 100%;
+  aspect-ratio: 1.1/1;
+  border-radius: 50% / 45%;
+  box-shadow: 0 2px 16px rgba(34,43,58,0.14);
+  margin-bottom: 1.2em;
+  margin-top: 0.5em;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* Responsive adjustments */
@@ -188,5 +299,42 @@ section#about p {
   }
   .livestream iframe {
     height: 220px;
+  }
+}
+@media (max-width: 900px) {
+  .footer-main {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1em;
+  }
+  .hero-content.modern-left {
+    max-width: 98vw;
+    margin-left: 2vw;
+    padding: 1.5em 1em 1em 1em;
+  }
+  .hero-content.modern-left h1 {
+    font-size: 2.1rem;
+  }
+  .hero-content.modern-left p {
+    font-size: 1.1rem;
+  }
+}
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 0.98em;
+    padding: 1.5em 0 0.5em 0;
+  }
+  .footer-main, .footer-bottom {
+    max-width: 98vw;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+  .footer-nav {
+    gap: 1em;
   }
 }
