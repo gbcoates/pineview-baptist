@@ -26,10 +26,10 @@
         const day = now.getDay(); // 0=Sunday, 3=Wednesday
         const hour = now.getHours();
         const min = now.getMinutes();
-        // Sunday 10:00–11:30am
-        if (day === 0 && ((hour === 10) || (hour === 11 && min < 30))) return true;
-        // Wednesday 7:00–8:30pm
-        if (day === 3 && ((hour === 19) || (hour === 20 && min < 30))) return true;
+        // Sunday 9:55–11:30am
+        if (day === 0 && ((hour === 9 && min >= 55) || (hour === 10) || (hour === 11 && min < 30))) return true;
+        // Wednesday 6:55–8:30pm
+        if (day === 3 && ((hour === 18 && min >= 55) || (hour === 19) || (hour === 20 && min < 30))) return true;
         return false;
       }
 
@@ -122,7 +122,7 @@
           </svg>
         </a>
       </p>
-      <p> Sundays @ 10am and Wednesdays @ 7pm</p>
+      <p> Sundays @ <strong>9:55am</strong> and Wednesdays @ <strong>6:55pm</strong></p>
       <button id="show-livestream" class="btn">Show Livestream</button>
       <div class="livestream" id="livestream-container" style="display:none; margin-top: 1rem;">
         <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fpineview.baptist.1%2Fvideos%2F2173123779779566%2F&width=1280" width="100%" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
@@ -175,8 +175,8 @@
       <div class="footer-col footer-schedule">
         <h3>Weekly Schedule</h3>
         <p><strong>Sunday School:</strong><br>9:00am<br><br>
-        <strong>Sunday Worship:</strong><br>10:00am<br><br>
-        <strong>Wednesday Bible Study:</strong><br>7:00pm</p>
+        <strong>Sunday Worship:</strong><br>9:55am<br><br>
+        <strong>Wednesday Bible Study:</strong><br>6:55pm</p>
       </div>
       <div class="footer-col footer-contact">
         <h3>Contact</h3>
