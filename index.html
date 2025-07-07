@@ -9,13 +9,16 @@
   <link rel="stylesheet" href="css/fonts.css"/>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      // Smooth scroll for nav links
+      // Smooth scroll for nav links (only for internal # links)
       document.querySelectorAll("nav a").forEach(link => {
         link.addEventListener("click", e => {
-          e.preventDefault();
-          const target = document.querySelector(link.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({ behavior: "smooth" });
+          const href = link.getAttribute("href");
+          if (href.startsWith("#")) {
+            e.preventDefault();
+            const target = document.querySelector(href);
+            if (target) {
+              target.scrollIntoView({ behavior: "smooth" });
+            }
           }
         });
       });
@@ -64,7 +67,7 @@
     gtag('config', 'G-YSRC33CN5E');
   </script>
 </head>
-  <body>
+<body>
   <header class="hero" id="home">
     <nav class="nav">
       <ul>
@@ -104,10 +107,6 @@
         </iframe>
       </div>
     </section>
-
-
-
-    
 
     <section id="livestream">
       <h2>Livestream</h2>
@@ -204,40 +203,38 @@
   </footer>
 
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const eventsList = document.getElementById('events-list');
-  fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSvyqF8C06AyNWEOvny4fXHtktXfjWCQ9BFR4vjCGwTWtSPfq0uzU3CdzDD-yJ2Cz02XW_GJsucd-4U/pub?gid=0&single=true&output=csv')
-    .then(response => response.text())
-    .then(csv => {
-      const rows = csv.trim().split('\n').map(row => row.split(','));
-      eventsList.innerHTML = '';
-      const today = new Date();
-      let hasUpcoming = false;
-      for (let i = 1; i < rows.length; i++) {
-        const [date, event, time] = rows[i];
-        if (date && event && time) {
-          // Parse date in MM/DD/YYYY or M/D/YYYY format
-          const parts = date.split('/');
-          if (parts.length === 3) {
-            const eventDate = new Date(parts[2], parts[0] - 1, parts[1]);
-            // Only show if event is today or in the future
-            if (eventDate >= new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
-              const li = document.createElement('li');
-              li.innerHTML = `<strong>${date}</strong>: ${event} — <em>${time}</em>`;
-              eventsList.appendChild(li);
-              hasUpcoming = true;
+    document.addEventListener("DOMContentLoaded", function() {
+      const eventsList = document.getElementById('events-list');
+      fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSvyqF8C06AyNWEOvny4fXHtktXfjWCQ9BFR4vjCGwTWtSPfq0uzU3CdzDD-yJ2Cz02XW_GJsucd-4U/pub?gid=0&single=true&output=csv')
+        .then(response => response.text())
+        .then(csv => {
+          const rows = csv.trim().split('\n').map(row => row.split(','));
+          eventsList.innerHTML = '';
+          const today = new Date();
+          let hasUpcoming = false;
+          for (let i = 1; i < rows.length; i++) {
+            const [date, event, time] = rows[i];
+            if (date && event && time) {
+              const parts = date.split('/');
+              if (parts.length === 3) {
+                const eventDate = new Date(parts[2], parts[0] - 1, parts[1]);
+                if (eventDate >= new Date(today.getFullYear(), today.getMonth(), today.getDate())) {
+                  const li = document.createElement('li');
+                  li.innerHTML = `<strong>${date}</strong>: ${event} — <em>${time}</em>`;
+                  eventsList.appendChild(li);
+                  hasUpcoming = true;
+                }
+              }
             }
           }
-        }
-      }
-      if (!hasUpcoming) {
-        eventsList.innerHTML = '<li>No upcoming events.</li>';
-      }
-    })
-    .catch(() => {
-      eventsList.innerHTML = '<li>Could not load events.</li>';
+          if (!hasUpcoming) {
+            eventsList.innerHTML = '<li>No upcoming events.</li>';
+          }
+        })
+        .catch(() => {
+          eventsList.innerHTML = '<li>Could not load events.</li>';
+        });
     });
-});
-</script>
+  </script>
 </body>
 </html>
