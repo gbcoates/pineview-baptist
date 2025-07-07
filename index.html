@@ -43,15 +43,11 @@
         }
       }
 
-      // Show livestream on button click
+      // Show livestream on button click (always show in section, conditional in hero)
       const showBtn = document.getElementById('show-livestream');
       const livestream = document.getElementById('livestream-container');
       if (showBtn && livestream) {
-        if (!isLivestreamTime()) {
-          showBtn.style.display = 'none';
-        } else {
-          showBtn.style.display = '';
-        }
+        showBtn.style.display = '';
         showBtn.addEventListener('click', () => {
           livestream.style.display = 'block';
           showBtn.style.display = 'none';
@@ -75,6 +71,7 @@
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
         <li><a href="#livestream">Livestream</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
         <li><a href="#events">Events</a></li>
         <li><a href="#give">Give</a></li>
         <li><a href="#footer-contact">Contact</a></li>
@@ -114,18 +111,17 @@
 
     <section id="livestream">
       <h2>Livestream</h2>
-      <p>Watch our services live—right here or on Facebook
-        <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener" aria-label="Facebook" style="display:inline-block; vertical-align:middle; margin-left:0.3em;">
-          <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
-            <circle cx="16" cy="16" r="16" fill="#1877F3"/>
-            <path d="M21.5 16.01h-3.01v8h-3.34v-8h-1.67v-2.83h1.67v-1.67c0-2.01 1.01-3.17 3.34-3.17h2.5v2.83h-1.5c-0.5 0-0.84 0.34-0.84 0.84v1.17h2.34l-0.33 2.83z" fill="#fff"/>
-          </svg>
-        </a>
+      <p>Watch our services live—right here or on our <a href="https://www.youtube.com/@PineviewBaptistKershaw" target="_blank" rel="noopener" aria-label="YouTube" style="display:inline-block; vertical-align:middle; margin-left:0.3em;">
+        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
+          <circle cx="16" cy="16" r="16" fill="#FF0000"/>
+          <polygon points="13,11 23,16 13,21" fill="#fff"/>
+        </svg>
+        YouTube channel</a>.
       </p>
       <p> Sundays @ <strong>10:00am</strong> and Wednesdays @ <strong>7:00pm</strong></p>
       <button id="show-livestream" class="btn">Show Livestream</button>
       <div class="livestream" id="livestream-container" style="display:none; margin-top: 1rem;">
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fpineview.baptist.1%2Fvideos%2F2173123779779566%2F&width=1280" width="100%" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+        <iframe src="https://www.youtube.com/embed/live_stream?channel=UCR-8XlM9PnK4dQFqmQ_-qYw&autoplay=1" width="100%" height="480" style="border:none;overflow:hidden" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
       </div>
     </section>
 
