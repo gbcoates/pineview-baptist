@@ -66,6 +66,16 @@
           showBtn.style.display = 'none';
         });
       }
+
+      // Hero video fallback logic
+      const heroVideo = document.getElementById('heroVideo');
+      const heroHeader = document.querySelector('.hero');
+      if (heroVideo && heroHeader) {
+        heroVideo.addEventListener('ended', function() {
+          heroVideo.classList.add('hide');
+          heroHeader.classList.add('bg-fallback');
+        });
+      }
     });
   </script>
   <!-- Google Analytics -->
@@ -79,6 +89,10 @@
 </head>
 <body>
   <header class="hero" id="home">
+    <video class="hero-bg-video" autoplay muted playsinline preload="auto" poster="media/church.jpg" id="heroVideo">
+      <source src="media/footage.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
     <nav class="nav">
       <ul>
         <li><a href="#home">Home</a></li>
