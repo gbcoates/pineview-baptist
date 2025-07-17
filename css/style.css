@@ -427,8 +427,20 @@ footer {
 }
 @media (max-width: 700px) {
   nav ul {
-    flex-direction: column;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
     gap: 1em;
+    padding-bottom: 0.5em;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+  }
+  nav ul::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  nav li {
+    display: inline-block;
+    margin-right: 0.5em;
   }
   .footer-bottom {
     flex-direction: column;
