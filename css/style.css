@@ -462,3 +462,34 @@ footer {
     height: 220px;
   }
 }
+
+.google-doc-embed {
+  width: 816px;
+  max-width: 100vw;
+  overflow-x: auto;
+  margin: auto;
+  background: #f7f7f7;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(34,43,58,0.12);
+  display: flex;
+  justify-content: center;
+}
+
+.google-doc-embed iframe {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+}
+
+@media (max-width: 900px) {
+  .google-doc-embed {
+    width: 100vw;
+    max-width: 100vw;
+    padding: 0;
+  }
+  .google-doc-embed iframe {
+    width: 100vw;
+    max-width: 100vw;
+    height: 70vw; /* maintain aspect ratio */
+  }
+}
