@@ -135,7 +135,7 @@ body {
 
 .btn-outline {
   background: transparent;
-  color: #fff;
+  color: #2196f3;
   border: 2px solid #2196f3;
   padding: 0.7em 1.5em;
   border-radius: 2em;
@@ -365,12 +365,22 @@ footer {
 
 .btn-outline {
   background: transparent;
-  color: #fff;
+  color: #2196f3;
   border: 2px solid #2196f3;
 }
 .btn-outline:hover, .btn-outline:focus {
   background: #2196f3;
   color: #fff;
+}
+
+/* Make outline buttons white in the hero (dark background) */
+.hero .btn-outline {
+  color: #fff;
+  border-color: #fff;
+}
+.hero .btn-outline:hover, .hero .btn-outline:focus {
+  background: #fff;
+  color: #005866;
 }
 
 /* --- Section Fade-in Animation --- */

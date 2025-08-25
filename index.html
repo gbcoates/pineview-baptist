@@ -159,8 +159,13 @@
       <h2>Give</h2>
       <p>
         Support our ministry:
-        <a href="https://gift.idonate.com/baptist-foundation-of-south-carolina/pvbc" target="_blank" rel="noopener" class="btn" style="margin-left:0.5em;">Give Online</a>
+        <button id="show-idonate" class="btn" style="margin-left:0.5em;">Give on this page</button>
+        <a href="https://gift.idonate.com/baptist-foundation-of-south-carolina/pvbc" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:0.5em;">Give on iDonate</a>
       </p>
+      <div id="idonate-embed" style="display:none; margin-top:1rem;">
+        <div id="idonate-giving-form-container" data-embed-id="3d94a553-64c4-48d3-8a7e-1889bd3ffbc7"></div>
+        <script src="https://apps.idonate.com/idonate-giving-form.js"></script>
+      </div>
       
     </section>
 
@@ -271,6 +276,16 @@
         .catch(() => {
           eventsList.innerHTML = '<li>Could not load events.</li>';
         });
+
+      // Show iDonate embed on button click
+      const showIDonateBtn = document.getElementById('show-idonate');
+      const iDonateEmbed = document.getElementById('idonate-embed');
+      if (showIDonateBtn && iDonateEmbed) {
+        showIDonateBtn.addEventListener('click', () => {
+          iDonateEmbed.style.display = 'block';
+          showIDonateBtn.style.display = 'none';
+        });
+      }
     });
   </script>
 </body>
