@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pineview Baptist Church</title>
   <link rel="icon" type="image/svg+xml" href="/media/cross-favicon.svg" />
-  <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="css/fonts.css"/>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/fonts.css" />
   <link rel="manifest" href="/manifest.json" />
   <!-- iOS meta tags -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -56,22 +57,13 @@
         }
       }
 
-      // Show livestream on button click (always show in section, conditional in hero)
-      const showBtn = document.getElementById('show-livestream');
-      const livestream = document.getElementById('livestream-container');
-      if (showBtn && livestream) {
-        showBtn.style.display = '';
-        showBtn.addEventListener('click', () => {
-          livestream.style.display = 'block';
-          showBtn.style.display = 'none';
-        });
-      }
+
 
       // Hero video fallback logic
       const heroVideo = document.getElementById('heroVideo');
       const heroHeader = document.querySelector('.hero');
       if (heroVideo && heroHeader) {
-        heroVideo.addEventListener('ended', function() {
+        heroVideo.addEventListener('ended', function () {
           heroVideo.classList.add('hide');
           heroHeader.classList.add('bg-fallback');
         });
@@ -82,11 +74,12 @@
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-YSRC33CN5E"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
+    function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
     gtag('config', 'G-YSRC33CN5E');
   </script>
 </head>
+
 <body>
   <header class="hero" id="home">
     <video class="hero-bg-video" autoplay muted playsinline preload="auto" poster="media/church.jpg" id="heroVideo">
@@ -116,36 +109,25 @@
   <main>
     <section id="about">
       <h2>About Us</h2>
-      <img src="media/pastor.jpg" alt="Pastor Thomas Richardson" style="max-width:180px; width:100%; border-radius:50%; box-shadow:0 2px 12px rgba(34,43,58,0.12); margin-bottom:1em; margin-top:0.5em;" />
+      <img src="media/pastor.jpg" alt="Pastor Thomas Richardson"
+        style="max-width:180px; width:100%; border-radius:50%; box-shadow:0 2px 12px rgba(34,43,58,0.12); margin-bottom:1em; margin-top:0.5em;" />
       <p><strong>Pastor:</strong> Thomas Richardson</p>
       <p>We are a welcoming, Christ-centered church serving Kershaw and the surrounding community. <br><br> </p>
       <div style="margin-top: 1em; display: flex; justify-content: center;">
-        <iframe
-          src="https://www.google.com/maps?q=224+Youngs+Bend+Road,+Kershaw,+South+Carolina&output=embed&z=16"
-          width="500"
-          height="300"
-          style="border:0; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade">
+        <iframe src="https://www.google.com/maps?q=224+Youngs+Bend+Road,+Kershaw,+South+Carolina&output=embed&z=16"
+          width="500" height="300" style="border:0; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </section>
 
     <section id="livestream">
       <h2>Livestream</h2>
-      <p>Watch our services live—right here, on Facebook, or on our <a href="https://www.youtube.com/@PineviewBaptistKershaw" target="_blank" rel="noopener" aria-label="YouTube" style="display:inline-block; vertical-align:middle; margin-left:0.3em;">
-        <svg width="22" height="22" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="vertical-align:middle;">
-          <circle cx="16" cy="16" r="16" fill="#FF0000"/>
-          <polygon points="13,11 23,16 13,21" fill="#fff"/>
-        </svg>
-        YouTube channel</a>.
-      </p>
+      <p>Watch our services live on <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener"
+          aria-label="Facebook">Facebook</a>.</p>
       <p> Sundays @ <strong>10:00am</strong> and Wednesdays @ <strong>7:00pm</strong></p>
-      <button id="show-livestream" class="btn">Show Livestream</button>
-      <div class="livestream" id="livestream-container" style="display:none; margin-top: 1rem;">
-        <iframe src="https://www.youtube.com/embed/live_stream?channel=UCR-8XlM9PnK4dQFqmQ_-qYw&autoplay=1" width="100%" height="480" style="border:none;overflow:hidden" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
-      </div>
+      <a href="https://www.facebook.com/pineview.baptist.1/live_videos/" target="_blank" rel="noopener"
+        class="btn">Watch Live on Facebook</a>
     </section>
 
     <section id="events">
@@ -160,13 +142,14 @@
       <p>
         Support our ministry:
         <button id="show-idonate" class="btn" style="margin-left:0.5em;">Give on this page</button>
-        <a href="https://gift.idonate.com/baptist-foundation-of-south-carolina/pvbc" target="_blank" rel="noopener" class="btn btn-outline" style="margin-left:0.5em;">Give on iDonate</a>
+        <a href="https://gift.idonate.com/baptist-foundation-of-south-carolina/pvbc" target="_blank" rel="noopener"
+          class="btn btn-outline" style="margin-left:0.5em;">Give on iDonate</a>
       </p>
       <div id="idonate-embed" style="display:none; margin-top:1rem;">
         <div id="idonate-giving-form-container" data-embed-id="3d94a553-64c4-48d3-8a7e-1889bd3ffbc7"></div>
         <script src="https://apps.idonate.com/idonate-giving-form.js"></script>
       </div>
-      
+
     </section>
 
     <section id="connect">
@@ -175,17 +158,13 @@
       <div class="fb-page-container" style="max-width:700px; margin:2em auto; display:flex; justify-content:center;">
         <iframe
           src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpineview.baptist.1&tabs=timeline&width=680&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-          width="680"
-          height="500"
-          style="border:none;overflow:hidden; display:block;"
-          scrolling="no"
-          frameborder="0"
-          allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          width="680" height="500" style="border:none;overflow:hidden; display:block;" scrolling="no" frameborder="0"
+          allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
         </iframe>
       </div>
       <p style="margin-top:1.5em;">
-        <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener" class="btn btn-outline">Visit Our Facebook Page</a>
+        <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener"
+          class="btn btn-outline">Visit Our Facebook Page</a>
       </p>
     </section>
   </main>
@@ -200,13 +179,15 @@
       <div class="footer-col footer-schedule">
         <h3>Weekly Schedule</h3>
         <p><strong>Sunday School:</strong><br>9:00am<br><br>
-        <strong>Sunday Worship:</strong><br>10:00am<br><br>
-        <strong>Wednesday Bible Study:</strong><br>7:00pm</p>
+          <strong>Sunday Worship:</strong><br>10:00am<br><br>
+          <strong>Wednesday Bible Study:</strong><br>7:00pm
+        </p>
       </div>
       <div class="footer-col footer-contact">
         <h3>Contact</h3>
         <p><strong>Phone:</strong> 803-475-9574<br>
-        <strong>Email: </strong>info@pbckershaw.org</p>
+          <strong>Email: </strong>info@pbckershaw.org
+        </p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -223,18 +204,14 @@
           <!-- Facebook -->
           <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener" aria-label="Facebook">
             <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="16" fill="#1877F3"/>
-              <path d="M21.5 16.01h-3.01v8h-3.34v-8h-1.67v-2.83h1.67v-1.67c0-2.01 1.01-3.17 3.34-3.17h2.5v2.83h-1.5c-0.5 0-0.84 0.34-0.84 0.84v1.17h2.34l-0.33 2.83z" fill="#fff"/>
+              <circle cx="16" cy="16" r="16" fill="#1877F3" />
+              <path
+                d="M21.5 16.01h-3.01v8h-3.34v-8h-1.67v-2.83h1.67v-1.67c0-2.01 1.01-3.17 3.34-3.17h2.5v2.83h-1.5c-0.5 0-0.84 0.34-0.84 0.84v1.17h2.34l-0.33 2.83z"
+                fill="#fff" />
             </svg>
           </a>
 
-          <!-- YouTube -->
-          <a href="https://www.youtube.com/@PineviewBaptistKershaw" target="_blank" rel="noopener" aria-label="YouTube" style="margin-left: 1em;">
-            <svg width="28" height="28" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="16" cy="16" r="16" fill="#FF0000"/>
-              <polygon points="13,11 23,16 13,21" fill="#fff"/>
-            </svg>
-          </a>
+
         </div>
 
       </div>
@@ -245,7 +222,7 @@
   </footer>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function() {
+    document.addEventListener("DOMContentLoaded", function () {
       const eventsList = document.getElementById('events-list');
       fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSvyqF8C06AyNWEOvny4fXHtktXfjWCQ9BFR4vjCGwTWtSPfq0uzU3CdzDD-yJ2Cz02XW_GJsucd-4U/pub?gid=0&single=true&output=csv')
         .then(response => response.text())
@@ -289,4 +266,5 @@
     });
   </script>
 </body>
+
 </html>
