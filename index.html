@@ -12,7 +12,7 @@
   <!-- iOS meta tags -->
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-  <meta name="apple-mobile-web-app-title" content="Your App Name" />
+  <meta name="apple-mobile-web-app-title" content="Pineview Baptist" />
   <!-- iOS app icon -->
   <link rel="apple-touch-icon" href="/icons/pbc192.jpg" />
   <!-- iOS splash screen background color -->
@@ -86,7 +86,11 @@
       <source src="media/footage.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
-    <nav class="nav">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-brand" href="#home" aria-label="Pineview Baptist Church home">
+        <img src="media/cross-favicon.svg" alt="" />
+        <span>Pineview Baptist</span>
+      </a>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#about">About</a></li>
@@ -98,71 +102,103 @@
       </ul>
     </nav>
     <div class="hero-content modern-left">
+      <p class="eyebrow">Kershaw, South Carolina</p>
       <h1>Pineview Baptist Church</h1>
-      <p>Serving Christ and our community with faith and love</p>
-      <a href="#livestream" class="btn">Watch Live</a>
-      <a href="announcements.html" class="btn btn-outline">Announcements</a>
-      <a href="newsletter.html" class="btn btn-outline" style="margin-top:1em;">Newsletters</a>
+      <p class="hero-lede">A Christ-centered church family serving our community with faith, hope, and love.</p>
+      <div class="hero-actions" aria-label="Primary actions">
+        <a href="#livestream" class="btn">Watch Live</a>
+        <a href="announcements.html" class="btn btn-light">Announcements</a>
+        <a href="newsletter.html" class="btn btn-outline">Newsletter</a>
+      </div>
+      <div class="hero-info" aria-label="Weekly service times">
+        <div>
+          <span>Sunday School</span>
+          <strong>9:00am</strong>
+        </div>
+        <div>
+          <span>Sunday Worship</span>
+          <strong>10:00am</strong>
+        </div>
+        <div>
+          <span>Wednesday Study</span>
+          <strong>7:00pm</strong>
+        </div>
+      </div>
     </div>
   </header>
 
   <main>
-    <section id="about">
-      <h2>About Us</h2>
-      <img src="media/pastor.jpg" alt="Pastor Thomas Richardson"
-        style="max-width:180px; width:100%; border-radius:50%; box-shadow:0 2px 12px rgba(34,43,58,0.12); margin-bottom:1em; margin-top:0.5em;" />
-      <p><strong>Pastor:</strong> Thomas Richardson</p>
-      <p>We are a welcoming, Christ-centered church serving Kershaw and the surrounding community. <br><br> </p>
-      <div style="margin-top: 1em; display: flex; justify-content: center;">
+    <section id="about" class="section-grid about-section">
+      <div class="section-copy">
+        <p class="eyebrow">About Us</p>
+        <h2>A place to worship, grow, and serve together.</h2>
+        <p>We are a welcoming, Christ-centered church serving Kershaw and the surrounding community.</p>
+        <div class="pastor-card">
+          <img src="media/pastor.jpg" alt="Pastor Thomas Richardson" />
+          <div>
+            <span>Pastor</span>
+            <strong>Thomas Richardson</strong>
+          </div>
+        </div>
+      </div>
+      <div class="map-panel" aria-label="Church location map">
         <iframe src="https://www.google.com/maps?q=224+Youngs+Bend+Road,+Kershaw,+South+Carolina&output=embed&z=16"
-          width="500" height="300" style="border:0; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.1);"
+          width="500" height="300"
           allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
         </iframe>
       </div>
     </section>
 
-    <section id="livestream">
-      <h2>Livestream</h2>
-      <p>Watch our services live on <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener"
+    <section id="livestream" class="feature-band">
+      <div>
+        <p class="eyebrow">Livestream</p>
+        <h2>Join us online when you cannot be here in person.</h2>
+        <p>Watch our services live on <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener"
           aria-label="Facebook">Facebook</a>.</p>
-      <p> Sundays @ <strong>10:00am</strong> and Wednesdays @ <strong>7:00pm</strong></p>
+        <p>Sundays at <strong>10:00am</strong> and Wednesdays at <strong>7:00pm</strong></p>
+      </div>
       <a href="https://www.facebook.com/pineview.baptist.1/live_videos/" target="_blank" rel="noopener"
         class="btn">Watch Live on Facebook</a>
     </section>
 
-    <section id="events">
+    <section id="events" class="events-section">
+      <p class="eyebrow">Coming Up</p>
       <h2>Events</h2>
       <ul id="events-list">
         <li>Loading events...</li>
       </ul>
     </section>
 
-    <section id="give">
-      <h2>Give</h2>
-      <p>
-        Support our ministry:
-        <button id="show-idonate" class="btn" style="margin-left:0.5em;">Give on this page</button>
+    <section id="give" class="feature-band give-band">
+      <div>
+        <p class="eyebrow">Give</p>
+        <h2>Support the ministry of Pineview Baptist.</h2>
+        <p>Your generosity helps us serve our church family and community.</p>
+      </div>
+      <div class="button-row">
+        <button id="show-idonate" class="btn">Give on this page</button>
         <a href="https://gift.idonate.com/baptist-foundation-of-south-carolina/pvbc" target="_blank" rel="noopener"
-          class="btn btn-outline" style="margin-left:0.5em;">Give on iDonate</a>
-      </p>
-      <div id="idonate-embed" style="display:none; margin-top:1rem;">
+          class="btn btn-outline">Give on iDonate</a>
+      </div>
+      <div id="idonate-embed" class="idonate-embed">
         <div id="idonate-giving-form-container" data-embed-id="3d94a553-64c4-48d3-8a7e-1889bd3ffbc7"></div>
         <script src="https://apps.idonate.com/idonate-giving-form.js"></script>
       </div>
 
     </section>
 
-    <section id="connect">
+    <section id="connect" class="connect-section">
+      <p class="eyebrow">Connect</p>
       <h2>Connect With Us</h2>
       <p>See our latest photos, updates, and events on Facebook:</p>
-      <div class="fb-page-container" style="max-width:700px; margin:2em auto; display:flex; justify-content:center;">
+      <div class="fb-page-container">
         <iframe
           src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fpineview.baptist.1&tabs=timeline&width=680&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
-          width="680" height="500" style="border:none;overflow:hidden; display:block;" scrolling="no" frameborder="0"
+          width="680" height="500" scrolling="no" frameborder="0"
           allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
         </iframe>
       </div>
-      <p style="margin-top:1.5em;">
+      <p>
         <a href="https://www.facebook.com/pineview.baptist.1" target="_blank" rel="noopener"
           class="btn btn-outline">Visit Our Facebook Page</a>
       </p>
@@ -170,7 +206,6 @@
   </main>
 
   <footer class="site-footer" id="footer-contact">
-    <hr style="border: none; border-top: 3px solid #2196f3; margin-bottom: 2em; margin-top: 0;" />
     <div class="footer-main">
       <div class="footer-col footer-location">
         <h3>Location</h3>
@@ -197,7 +232,7 @@
         <a href="#livestream">Watch Live</a>
         <a href="#events">Events</a>
         <a href="#give">Give</a>
-        <a href="#contact">Contact</a>
+        <a href="#footer-contact">Contact</a>
       </nav>
       <div class="footer-social">
         <div class="footer-social">
@@ -217,7 +252,7 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <p>&copy; 2025 Pineview Baptist Church</p>
+      <p>&copy; 2026 Pineview Baptist Church</p>
     </div>
   </footer>
 

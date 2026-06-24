@@ -5,43 +5,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Announcements - Pineview Baptist Church</title>
-  <link rel="icon" type="image/svg+xml" href="cross-favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href="media/cross-favicon.svg" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/fonts.css" />
 </head>
 
 <body>
-  <header class="hero"
-    style="background: linear-gradient(rgba(44,62,80,0.55), rgba(44,62,80,0.55)), url('media/church.jpg') center center/cover no-repeat;">
-    <nav class="nav">
+  <header class="hero subpage-hero bg-fallback">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="nav-brand" href="index.html#home" aria-label="Pineview Baptist Church home">
+        <img src="media/cross-favicon.svg" alt="" />
+        <span>Pineview Baptist</span>
+      </a>
       <ul>
         <li><a href="index.html#home">Home</a></li>
         <li><a href="index.html#about">About</a></li>
         <li><a href="index.html#livestream">Livestream</a></li>
+        <li><a href="sermons.html">Sermons</a></li>
         <li><a href="index.html#events">Events</a></li>
         <li><a href="index.html#give">Give</a></li>
         <li><a href="index.html#footer-contact">Contact</a></li>
       </ul>
     </nav>
     <div class="hero-content">
+      <p class="eyebrow">Stay Updated</p>
       <h1>Announcements</h1>
-      <p>View the latest announcements</p>
+      <p>View the latest announcements from Pineview Baptist Church.</p>
     </div>
   </header>
 
   <main>
-    <!-- Centered Google Doc Embed -->
-    <div style="display:flex;justify-content:center;align-items:center;min-height:70vh;">
-      <div class="embed-container" style="width:100%;max-width:900px;margin:auto;">
+    <section class="document-wrap">
+      <div class="embed-container">
         <iframe
           src="https://docs.google.com/document/d/e/2PACX-1vTJOU07rjM8LBfzssY165LZhi53hfDDm7COnELyOq1mXwcKjkyzrRvAtDFXkQ659pi2S_Dbg78PBQG5/pub?embedded=true"
-          width="100%" height="900" style="border:none;" allowfullscreen title="Pineview Announcements"></iframe>
+          allowfullscreen title="Pineview Announcements"></iframe>
       </div>
-    </div>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <hr style="border: none; border-top: 3px solid #2196f3; margin-bottom: 2em; margin-top: 0;" />
     <div class="footer-main">
       <div class="footer-col footer-location">
         <h3>Location</h3>
@@ -84,7 +87,7 @@
       </div>
     </div>
     <div class="footer-copyright">
-      <p>&copy; 2025 Pineview Baptist Church</p>
+      <p>&copy; 2026 Pineview Baptist Church</p>
     </div>
   </footer>
 </body>
